@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="error">
+	<Appenders>
+		<!-- <JDBC name="databaseAppender" tableName="COMPANY.APPLICATION_LOG">
+			<ConnectionFactory class="com.CRUDtst.util.DBConnector"
+				method="connnect" />
+			<Column name="EVENT_DATE" isEventTimestamp="true" />
+			<Column name="LEVEL" pattern="%level" />
+			<Column name="LOGGER" pattern="%logger" />
+			<Column name="MESSAGE" pattern="%message" />
+			<Column name="THROWABLE" pattern="%ex{full}" />
+		</JDBC> -->
+
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+
+		<File name="MyFile" fileName="logs/app.log">
+			<PatternLayout
+				pattern="%d{yyyy-mm-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</File>
+	</Appenders>
+	<Loggers>
+		<Root>
+			<appender-ref ref="databaseAppender" level="ALL"/>
+			<appender-ref ref="Console" level="FATAL" />
+			<appender-ref ref="MyFile" level="ALL"/>
+		</Root>
+	</Loggers>
+</Configuration>
