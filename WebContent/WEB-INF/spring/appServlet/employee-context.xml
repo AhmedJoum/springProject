@@ -43,6 +43,7 @@
 		<beans:property name="annotatedClasses">
 			<beans:list>
 				<beans:value>com.Interface.Employee.model.Employee</beans:value>
+				<beans:value>com.Interface.Department.model.Department</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">

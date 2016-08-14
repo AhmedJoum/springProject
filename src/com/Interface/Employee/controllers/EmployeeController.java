@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.Interface.Department.services.DepartmentService;
 import com.Interface.Employee.model.Employee;
 import com.Interface.Employee.services.EmployeeService;
 
@@ -54,6 +55,16 @@ public class EmployeeController {
 		this.employeeService = employeeService;
 	}
 
+	/***/
+	
+	private DepartmentService departmentService;
+	
+	@Autowired(required = true)
+	@Qualifier(value = "DepartmentService")
+	public void setDepartmentService(DepartmentService departmentService) {
+		this.departmentService = departmentService;
+	}
+
 	/**
 	 * Handle <a><i>"/employees"<i></a> requested page, and added two model
 	 * attributes to be send to the returned view.
@@ -72,6 +83,7 @@ public class EmployeeController {
 	@RequestMapping(value = "/employees", method = RequestMethod.GET)
 	public String listEmployees(Model model) {
 		model.addAttribute("employee", new Employee());
+		model.addAttribute("listOfDepartments", this.departmentService.allDepartments());
 		model.addAttribute("listEmployees", this.employeeService.allEmloyees());
 		return "employee";
 	}
@@ -112,7 +124,7 @@ public class EmployeeController {
 	 */
 	
 	@RequestMapping("/employee/remove/{id}")
-	public String removePerson(@PathVariable("id") int emp_id) {
+	public String removeEmployee(@PathVariable("id") int emp_id) {
 
 		this.employeeService.deleteEmployee(emp_id);
 		return "redirect:/employees";
@@ -138,8 +150,8 @@ public class EmployeeController {
 	 * @return  a string of the requested view name.
 	 */
 
-	@RequestMapping("empoyee/edit/{emp_id}")
-	public String editPerson(@PathVariable("emp_id") int emp_id, Model model) {
+	@RequestMapping("/employee/edit/{emp_id}")
+	public String editEmployee(@PathVariable("emp_id") int emp_id, Model model) {
 		model.addAttribute("employee", this.employeeService.getEmployeeById(emp_id));
 		model.addAttribute("listEmployees", this.employeeService.allEmloyees());
 		return "employee";
