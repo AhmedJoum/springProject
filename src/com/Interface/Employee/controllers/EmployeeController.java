@@ -46,7 +46,7 @@ public class EmployeeController {
 	
 	/**
 	 * sets the mapped bean implementation class object for <i>EmployeeService</i>
-	 * inerface. 
+	 * interface. 
 	 */
 	
 	@Autowired(required = true)
@@ -55,9 +55,18 @@ public class EmployeeController {
 		this.employeeService = employeeService;
 	}
 
-	/***/
+	/**
+	 * One Property is set on this class, <p> a <i>departmentService</i> type,
+	 * which Autowired with it's bean in <i>department-context.xml</i> that named:
+	 * <i>DepartmentService</i>.
+	 */
 	
 	private DepartmentService departmentService;
+	
+	/**
+	 * sets the mapped bean implementation class object for <i>DepartmentService</i>
+	 * interface. 
+	 */
 	
 	@Autowired(required = true)
 	@Qualifier(value = "DepartmentService")

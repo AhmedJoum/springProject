@@ -9,7 +9,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	/**
 	 * One Property is set on this class, <p> a <i>EmployeeDAO</i> type,
-	 * which Autowired with it's bean in <i>servlet-context.xml</i> that named:
+	 * which Autowired with it's bean in <i>employee-context.xml</i> that named:
 	 * <i>EmployeeService</i>.
 	 *
 	 */

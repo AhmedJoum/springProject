@@ -40,7 +40,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	public void addEmloyee(Employee employee) {
 		Session addSession = this.sessionFactory.getCurrentSession();
 		addSession.persist(employee);
-		// log
 	}
 
 	@Override
@@ -48,7 +47,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	public void updateEmployee(Employee employee) {
 		Session updateSession = this.sessionFactory.getCurrentSession();
 		updateSession.update(employee);
-		// log
 	}
 
 	@Override
@@ -56,9 +54,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	public List<Employee> allEmloyees() {
 		Session allEmpSession = this.sessionFactory.getCurrentSession();
 		List<Employee> EmployeeList = allEmpSession.createQuery("from emp").list();
-		for (Employee e : EmployeeList) {
-			// log //for lob are slowing your program...
-		}
+		
 		return EmployeeList;
 	}
 

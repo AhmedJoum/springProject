@@ -1,0 +1,8 @@
+com.Interface.Department.controllers
+com.Interface.Department.dao
+com.Interface.Department.model
+com.Interface.Department.services
+com.Interface.Employee.controllers
+com.Interface.Employee.dao
+com.Interface.Employee.model
+com.Interface.Employee.services

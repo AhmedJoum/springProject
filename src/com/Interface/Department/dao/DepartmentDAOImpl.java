@@ -11,9 +11,19 @@ import com.Interface.Department.model.Department;
 
 @EnableTransactionManagement
 public class DepartmentDAOImpl implements DepartmentDAO {
-
+	/**
+	 * One Property is set on this class, <p> a <i>SessionFactory</i> type,
+	 * which Autowired with it's bean in <i>servlet-context.xml</i> that named:
+	 * <i>EmployeeService</i>.
+	 *
+	 */
+	
 	private SessionFactory sessionFactory;
 
+	/**
+	 * sets the mapped bean implementation class object for <i>SessionFactory</i>
+	 * interface. 
+	 */
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}

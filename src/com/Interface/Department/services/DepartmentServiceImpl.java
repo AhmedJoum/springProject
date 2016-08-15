@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2016, Interface Company - Sudan and/or its affiliates. All rights reserved.
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ */
+
 package com.Interface.Department.services;
 
 import java.util.List;
@@ -6,8 +11,20 @@ import com.Interface.Department.dao.DepartmentDAO;
 import com.Interface.Department.model.Department;
 
 public class DepartmentServiceImpl implements DepartmentService {
-
+	
+	/**
+	 * One Property is set on this class, <p> a <i>DepartmentDAO</i> type,
+	 * which Autowired with it's bean in <i>department-context.xml</i> that named:
+	 * <i>EmployeeService</i>.
+	 *
+	 */
+	
 	private DepartmentDAO departmentDAO;
+	
+	/**
+	 * sets the mapped bean implementation class object for <i>DepartmentDAO</i>
+	 * interface. 
+	 */
 
 	public void setDepartmentDAO(DepartmentDAO departmentDAO) {
 		this.departmentDAO = departmentDAO;
